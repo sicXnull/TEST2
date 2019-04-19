@@ -1,12 +1,9 @@
 // Copyright (c) 2011-2013 The Bitcoin developers
-// Copyright (c) 2016-2018 The POSQ developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #ifndef BITCOIN_QT_WALLETFRAME_H
 #define BITCOIN_QT_WALLETFRAME_H
-
-#include "askpassphrasedialog.h"
 
 #include <QFrame>
 #include <QMap>
@@ -16,6 +13,7 @@ class ClientModel;
 class SendCoinsRecipient;
 class WalletModel;
 class WalletView;
+class TradingDialog;
 class BlockExplorer;
 
 QT_BEGIN_NAMESPACE
@@ -56,8 +54,6 @@ public slots:
     void gotoOverviewPage();
     /** Switch to history (transactions) page */
     void gotoHistoryPage();
-    /** Switch to governance page */
-    void gotoGovernancePage();
     /** Switch to masternode page */
     void gotoMasternodePage();
     /** Switch to receive coins page */
@@ -86,8 +82,7 @@ public slots:
     /** Change encrypted wallet passphrase */
     void changePassphrase();
     /** Ask for passphrase to unlock wallet temporarily */
-    void unlockWallet(AskPassphraseDialog::Context context);
-    void unlockWallet(bool setContext);
+    void unlockWallet();
     /** Lock wallet */
     void lockWallet();
     /** Toggle Wallet Lock State */

@@ -136,6 +136,10 @@
         <translation>用于在操作系统帐户遭到破坏时禁用琐碎的sendmoney。没有真正的安全性。</translation>
     </message>
     <message>
+        <source>For anonymization and staking only</source>
+        <translation>仅用于匿名化和加密</translation>
+    </message>
+    <message>
         <source>Enter the new passphrase to the wallet.&lt;br/&gt;Please use a passphrase of &lt;b&gt;ten or more random characters&lt;/b&gt;, or &lt;b&gt;eight or more words&lt;/b&gt;.</source>
         <translation>输入一个新的钱包密码&lt;br/&gt;钱包密码&lt;b&gt;建议使用10位以上的随机字符&lt;/b&gt;，或者&lt;b&gt; 3个以上的单词&lt;/b&gt;。并建议有序使用大小写字母。</translation>
     </message>
@@ -225,9 +229,6 @@
     </message>
 </context>
 <context>
-    <name>BanTableModel</name>
-    </context>
-<context>
     <name>Bip38ToolDialog</name>
     <message>
         <source>BIP 38 Tool</source>
@@ -238,8 +239,16 @@
         <translation>&amp;BIP 38 加密</translation>
     </message>
     <message>
+        <source>Enter a POSQ Address that you would like to encrypt using BIP 38. Enter a passphrase in the middle box. Press encrypt to compute the encrypted private key.</source>
+        <translation>输入您要使用BIP 38加密的POSQ地址。在中间框中输入密码。按加密计算加密私钥。</translation>
+    </message>
+    <message>
         <source>Address:</source>
         <translation>地址：</translation>
+    </message>
+    <message>
+        <source>The POSQ address to sign the message with</source>
+        <translation>该POSQ地址签名的消息</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -270,8 +279,16 @@
         <translation>将当前签名复制到系统剪贴板</translation>
     </message>
     <message>
+        <source>Sign the message to prove you own this POSQ address</source>
+        <translation>签署消息以证明您拥有此POSQ地址</translation>
+    </message>
+    <message>
         <source>Encrypt &amp;Key</source>
         <translation>加密&amp;秘钥</translation>
+    </message>
+    <message>
+        <source>Reset all sign message fields</source>
+        <translation>重置所有签名信息</translation>
     </message>
     <message>
         <source>Clear &amp;All</source>
@@ -286,8 +303,20 @@
         <translation>输入BIP 38加密私钥。 在中间框中输入密码。 单击解密密钥计算私钥。 密钥解密后，单击“导入地址”将将该私钥添加到钱包中。</translation>
     </message>
     <message>
+        <source>The POSQ address the message was signed with</source>
+        <translation>由POSQ地址签名的消息</translation>
+    </message>
+    <message>
+        <source>Verify the message to ensure it was signed with the specified POSQ address</source>
+        <translation>验证消息确保它已使用指定的POSQ地址进行签名</translation>
+    </message>
+    <message>
         <source>Decrypt &amp;Key</source>
         <translation>解密&amp;秘钥</translation>
+    </message>
+    <message>
+        <source>Reset all verify message fields</source>
+        <translation>重置所有验证消息</translation>
     </message>
     <message>
         <source>Decrypted Key:</source>
@@ -544,6 +573,10 @@
         <source>&amp;Command-line options</source>
         <translation>&amp;C命令行选项</translation>
     </message>
+    <message numerus="yes">
+        <source>Processed %n blocks of transaction history.</source>
+        <translation><numerusform>处理的 %n个交易记录块。</numerusform></translation>
+    </message>
     <message>
         <source>Synchronizing additional data: %p%</source>
         <translation>同步其他数据：%p%</translation>
@@ -583,6 +616,10 @@
     <message>
         <source>&amp;Privacy</source>
         <translation>&amp;P隐私</translation>
+    </message>
+    <message>
+        <source>Privacy Action for zPOSQ and Obfuscation</source>
+        <translation>zPOSQ和混淆的隐私操作</translation>
     </message>
     <message>
         <source>&amp;Masternodes</source>
@@ -660,6 +697,11 @@
         <source>POSQ Core client</source>
         <translation>POSQ Core 客户端</translation>
     </message>
+    <message numerus="yes">
+        <source>%n active connection(s) to POSQ network</source>
+        <translation><numerusform>%n 活动连接到POSQ网络
+</numerusform></translation>
+    </message>
     <message>
         <source>Synchronizing with network...</source>
         <translation>与网络同步</translation>
@@ -679,6 +721,26 @@
     <message>
         <source>Up to date</source>
         <translation>最新</translation>
+    </message>
+    <message numerus="yes">
+        <source>%n hour(s)</source>
+        <translation><numerusform>%n 小时</numerusform></translation>
+    </message>
+    <message numerus="yes">
+        <source>%n day(s)</source>
+        <translation><numerusform>%n 天</numerusform></translation>
+    </message>
+    <message numerus="yes">
+        <source>%n week(s)</source>
+        <translation><numerusform>%n 星期</numerusform></translation>
+    </message>
+    <message numerus="yes">
+        <source>%n year(s)</source>
+        <translation><numerusform>%n 年</numerusform></translation>
+    </message>
+    <message>
+        <source>%1 behind</source>
+        <translation>%1 落后</translation>
     </message>
     <message>
         <source>Catching up...</source>
@@ -801,13 +863,6 @@ Address: %4
     <name>FreespaceChecker</name>
     </context>
 <context>
-    <name>GovernancePage</name>
-    <message>
-        <source>Form</source>
-        <translation>来自</translation>
-    </message>
-    </context>
-<context>
     <name>HelpMessageDialog</name>
     <message>
         <source>POSQ Core</source>
@@ -886,17 +941,6 @@ Address: %4
         <source>Address:</source>
         <translation>地址：</translation>
     </message>
-    <message>
-        <source>Enter a label for this address to add it to your address book</source>
-        <translation>输入此地址的标签，将其添加到您的地址列表中</translation>
-    </message>
-    <message>
-        <source>(no label)</source>
-        <translation>未设置标签</translation>
-    </message>
-    </context>
-<context>
-    <name>MultisigDialog</name>
     </context>
 <context>
     <name>ObfuscationConfig</name>
@@ -1058,7 +1102,7 @@ Address: %4
         <source>The supplied proxy address is invalid.</source>
         <translation>提供的代理地址无效。</translation>
     </message>
-    </context>
+</context>
 <context>
     <name>OverviewPage</name>
     <message>
@@ -1076,6 +1120,10 @@ Address: %4
     <message>
         <source>The displayed information may be out of date. Your wallet automatically synchronizes with the POSQ network after a connection is established, but this process has not completed yet.</source>
         <translation>显示的信息可能已过期。建立连接后，您的钱包会自动与POSQ网络同步，但此过程尚未完成。</translation>
+    </message>
+    <message>
+        <source>Your current total balance</source>
+        <translation>您当前的总余额</translation>
     </message>
     <message>
         <source>Your current balance in watch-only addresses</source>
@@ -1124,14 +1172,7 @@ Address: %4
     </message>
     </context>
 <context>
-    <name>ProposalFrame</name>
-    </context>
-<context>
     <name>QObject</name>
-    <message>
-        <source>POSQ Core</source>
-        <translation>POSQ Core</translation>
-    </message>
     </context>
 <context>
     <name>QRImageWidget</name>
@@ -1148,7 +1189,7 @@ Address: %4
     <name>RPCConsole</name>
     <message>
         <source>&amp;Information</source>
-        <translation>&amp;I信息</translation>
+        <translation>&amp;信息</translation>
     </message>
     <message>
         <source>&amp;Open</source>
@@ -1186,10 +1227,6 @@ Address: %4
         <translation>&amp;消息：</translation>
     </message>
     <message>
-        <source>A&amp;mount:</source>
-        <translation>A&amp;总计</translation>
-    </message>
-    <message>
         <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the POSQ network.</source>
         <translation>附加到付款请求的可选消息，将在请求打开时显示。 注意：消息不会在付款时通过POSQ网络发送。</translation>
     </message>
@@ -1202,6 +1239,10 @@ Address: %4
         <translation>&amp;标签</translation>
     </message>
     <message>
+        <source>&amp;Amount:</source>
+        <translation>&amp;总计</translation>
+    </message>
+    <message>
         <source>&amp;Request payment</source>
         <translation>&amp;请求支付</translation>
     </message>
@@ -1209,11 +1250,7 @@ Address: %4
         <source>Copy message</source>
         <translation>复制消息</translation>
     </message>
-    <message>
-        <source>Copy address</source>
-        <translation>复制地址</translation>
-    </message>
-</context>
+    </context>
 <context>
     <name>ReceiveRequestDialog</name>
     <message>
@@ -1254,10 +1291,6 @@ Address: %4
     <message>
         <source>Message</source>
         <translation>消息 </translation>
-    </message>
-    <message>
-        <source>Address</source>
-        <translation>地址</translation>
     </message>
     <message>
         <source>(no label)</source>
@@ -1555,7 +1588,7 @@ Address: %4
     </message>
     </context>
 <context>
-    <name>ZPOSQControlDialog</name>
+    <name>ZPhrControlDialog</name>
     </context>
 <context>
     <name>posq-core</name>

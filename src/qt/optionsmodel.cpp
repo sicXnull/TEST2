@@ -1,6 +1,7 @@
 // Copyright (c) 2011-2014 The Bitcoin developers
 // Copyright (c) 2014-2015 The Dash developers
-// Copyright (c) 2015-2018 The POSQ developers
+// Copyright (c) 2015-2018 The PIVX developers
+// Copyright (c) 2018-2019 The POSQ developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -18,7 +19,6 @@
 #include "main.h"
 #include "net.h"
 #include "txdb.h" // for -dbcache defaults
-#include "util.h"
 
 #ifdef ENABLE_WALLET
 #include "masternodeconfig.h"
@@ -73,10 +73,6 @@ void OptionsModel::Init()
         settings.setValue("fHideZeroBalances", true);
     fHideZeroBalances = settings.value("fHideZeroBalances").toBool();
 
-    if (!settings.contains("fHideOrphans"))
-        settings.setValue("fHideOrphans", false);
-    fHideOrphans = settings.value("fHideOrphans").toBool();
-
     if (!settings.contains("fCoinControlFeatures"))
         settings.setValue("fCoinControlFeatures", false);
     fCoinControlFeatures = settings.value("fCoinControlFeatures", false).toBool();
@@ -129,7 +125,6 @@ void OptionsModel::Init()
 #endif
     if (!settings.contains("nStakeSplitThreshold"))
         settings.setValue("nStakeSplitThreshold", 1);
-
 
     // Network
     if (!settings.contains("fUseUPnP"))
@@ -256,11 +251,9 @@ QVariant OptionsModel::data(const QModelIndex& index, int role) const
             return settings.value("nThreadsScriptVerif");
         case HideZeroBalances:
             return settings.value("fHideZeroBalances");
-        case HideOrphans:
-            return settings.value("fHideOrphans");
         case ZeromintEnable:
             return QVariant(fEnableZeromint);
-        case ZeromintAddresses:
+        case ZeromintPercentage:
             return QVariant(nZeromintPercentage);
         case ZeromintPrefDenom:
             return QVariant(nPreferredDenom);
@@ -345,6 +338,7 @@ bool OptionsModel::setData(const QModelIndex& index, const QVariant& value, int 
             settings.setValue("nStakeSplitThreshold", value.toInt());
             setStakeSplitThreshold(value.toInt());
             break;
+
         case DisplayUnit:
             setDisplayUnit(value);
             break;
@@ -393,11 +387,7 @@ bool OptionsModel::setData(const QModelIndex& index, const QVariant& value, int 
             settings.setValue("fHideZeroBalances", fHideZeroBalances);
             emit hideZeroBalancesChanged(fHideZeroBalances);
             break;
-        case HideOrphans:
-            fHideOrphans = value.toBool();
-            settings.setValue("fHideOrphans", fHideOrphans);
-            emit hideOrphansChanged(fHideOrphans);
-            break;
+
         case AnonymizePOSQAmount:
             nAnonymizePOSQAmount = value.toInt();
             settings.setValue("nAnonymizePOSQAmount", nAnonymizePOSQAmount);

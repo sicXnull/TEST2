@@ -86,9 +86,9 @@ private:
     void emitDataChanged(int index);
 
 public slots:
-            /* Update address list from core.
-             */
-            void updateEntry(const QString& address, const QString& label, bool isMine, const QString& purpose, int status);
+    /* Update address list from core.
+     */
+    void updateEntry(const QString& address, const QString& label, bool isMine, const QString& purpose, int status);
     void updateEntry(const QString &pubCoin, const QString &isUsed, int status);
     friend class AddressTablePriv;
 };
